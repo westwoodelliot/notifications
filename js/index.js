@@ -53,7 +53,11 @@ function createDialog() {
 function dialogDismissed(buttonIndex) {
 	
 	if(buttonIndex==1) new Toast({content: "Go get food, you love food!", duration: 1500});
-   	else if(buttonIndex==2) new Toast({content: 'Get back to work you slacker!', duration: 1500});
+   	else 
+	{
+	if(buttonIndex==2) new Toast({content: 'Get back to work you slacker!', duration: 1500});
+	createNotification();
+	}
 
 }
 
@@ -65,7 +69,7 @@ function createNotification() {
     //generate a time to post notification
     //
     var currentTime = new Date().getTime(); //current time
-    var notificationTime = new Date(currentTime + 10000); //delayed time  - add 1 second
+    var notificationTime = new Date(currentTime + 30000); //delayed time  - add 1 second
     			
     //
     //setup notification

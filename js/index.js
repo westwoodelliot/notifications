@@ -23,7 +23,10 @@ $(document).on('pageinit', function() {
 function createMessage(){		
 	//phoneGap and jQueryMobile do not support toast messages directly
     //so we can add this using toast.js
-    new Toast({content: 'Your toast is ready.', duration: 1000}); 	
+    new Toast({content: 'Your toast is ready.', duration: 100}); 	
+	new Toast({content: 'Your toast isn\'t ready.', duration: 100}); 	
+	new Toast({content: 'Your toast is burnt.', duration: 100}); 	
+	new Toast({content: 'Your toast is bread.', duration: 100}); 	
 }
         	
 
@@ -45,8 +48,8 @@ function createDialog() {
         	
 function dialogDismissed(buttonIndex) {
 	
-	if(buttonIndex==1) new Toast({content: "You're easily pleased", duration: 3000});
-   	else if(buttonIndex==2) new Toast({content: 'It is rather boring.', duration: 3000});
+	if(buttonIndex==1) new Toast({content: "You're easily pleased", duration: 100});
+   	else if(buttonIndex==2) new Toast({content: 'It is rather boring.', duration: 100});
 
 }
 

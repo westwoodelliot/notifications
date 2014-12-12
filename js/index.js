@@ -23,10 +23,10 @@ $(document).on('pageinit', function() {
 function createMessage(){		
 	//phoneGap and jQueryMobile do not support toast messages directly
     //so we can add this using toast.js
-    new Toast({content: 'Your toast is ready.', duration: 100}); 	
-	new Toast({content: 'Your toast isn\'t ready.', duration: 100}); 	
-	new Toast({content: 'Your toast is burnt.', duration: 100}); 	
-	new Toast({content: 'Your toast is bread.', duration: 100}); 	
+    new Toast({content: 'Your toast is ready.', duration: 1500}); 	
+	new Toast({content: 'Your toast isn\'t ready.', duration: 1500}); 	
+	new Toast({content: 'Your toast is burnt.', duration: 1500}); 	
+	new Toast({content: 'Your toast is bread.', duration: 1500}); 	
 }
         	
 
@@ -36,10 +36,10 @@ function createDialog() {
 	//here's a simple example
       
 	navigator.notification.confirm(
-    	'What do you think of this dialog?',  // message
+    	'Are you hungry?',  // message
         dialogDismissed,         // callback
-        'An example dialog!',            // title
-        ['Awesome!', 'Sucks']                  // buttons
+        'Hunger games.',            // title
+        ['I\'m starving!', 'Meh']                  // buttons
     );
 
 }
@@ -48,8 +48,8 @@ function createDialog() {
         	
 function dialogDismissed(buttonIndex) {
 	
-	if(buttonIndex==1) new Toast({content: "You're easily pleased", duration: 100});
-   	else if(buttonIndex==2) new Toast({content: 'It is rather boring.', duration: 100});
+	if(buttonIndex==1) new Toast({content: "Go get food, you love food!", duration: 1500});
+   	else if(buttonIndex==2) new Toast({content: 'Get back to work you slacker!', duration: 1500});
 
 }
 

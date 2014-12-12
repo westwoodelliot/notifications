@@ -14,6 +14,10 @@ $(document).on('pageinit', function() {
 	$('#notificationButton').on('click', function() {
 		createNotification();
 	});
+	
+	$('#reminderButton').on('click', function() {
+		createReminder();
+	});
 
 
 });
@@ -23,9 +27,9 @@ $(document).on('pageinit', function() {
 function createMessage(){		
 	//phoneGap and jQueryMobile do not support toast messages directly
     //so we can add this using toast.js
-    new Toast({content: 'Your toast is ready.', duration: 1500}); 	
+    /*new Toast({content: 'Your toast is ready.', duration: 1500}); 	
 	new Toast({content: 'Your toast isn\'t ready.', duration: 1500}); 	
-	new Toast({content: 'Your toast is burnt.', duration: 1500}); 	
+	new Toast({content: 'Your toast is burnt.', duration: 1500}); 	*/
 	new Toast({content: 'Your toast is bread.', duration: 1500}); 	
 }
         	
@@ -70,6 +74,27 @@ function createNotification() {
     	id: 		1,
         title: 		"Hey you",
         message: 	"Are you hungry?",
+        date: 		notificationTime, 
+        badge: 		notification_count++
+   	});
+    
+}
+
+function createReminder() {
+        		
+	//
+    //generate a time to post notification
+    //
+    var currentTime = new Date().getTime(); //current time
+    var notificationTime = new Date(currentTime + 20000); //delayed time  - add 1 second
+    			
+    //
+    //setup notification
+    //
+	window.plugin.notification.local.add({ 
+    	id: 		1,
+        title: 		"Finished food?",
+        message: 	"Get back to work.",
         date: 		notificationTime, 
         badge: 		notification_count++
    	});
